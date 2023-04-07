@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+        <div class="row header-box">
+            <div class="col-md-8">
+                <h1>
+                    <a id="detail" style="text-decoration: none">Add contact</a>
+                </h1>
+            </div>
+        </div>
+        <div id="buttons" class="grid" hidden="true">
+            <a href="../contacts/create_contact" class="btn btn-primary">Add contact</a>
+            <a href="../contacts" class="btn btn-primary" class="secondary">Contacts</a>
+        </div>
+    <div class="col-md-3">
+        <form>
+            <div>
+                <label>First name<label class="text-danger-emphasis">*</label></label>
+                <input type="text" class="form-control" name="first_name">
+            </div>
+            <div>
+                <label>Last name<label class="text-danger-emphasis">*</label></label>
+                <input type="text" class="form-control" name="last_name">
+            </div>
+            <div>
+                <label>Birthday</label>
+                <input type="date" class="form-control" name="birthday">
+            </div>
+            <div>
+                <label>Job</label>
+                <input type="text" class="form-control" name="job">
+            </div>
+            <div>
+                <label>Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="example@example.com">
+            </div>
+            <div>
+                <label>Phone<label class="text-danger-emphasis">*</label></label>
+                <input type="phone" class="form-control" name="phone" placeholder="+38(050)123-45-78" required>
+            </div>
+            <div>
+                <label>Avatar</label>
+                <input type="file" class="form-control" name="avatar">
+            </div>
+            <div class="alert alert-danger" role="alert" id="message" hidden="true"></div>
+            <div class="grid">
+                <button class="btn btn-primary" type="submit">Add</button>
+                <button class="btn btn-primary" type="reset" class="secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+    <script src="{{url_for('routes_static', path='/create_contact.js')}}"></script>
+
+{% endblock %}
